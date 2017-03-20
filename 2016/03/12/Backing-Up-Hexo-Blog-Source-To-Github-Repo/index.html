@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Backing Up Hexo Blog Source To Github Repo | tronik.conf</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="NoticeI have ran into a few issues with having hexo on my desktop and laptop. One thing to note is that Hexo’s environment (aka the hexo blog folder) containes a few dependencies and files that could">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Backing Up Hexo Blog Source To Github Repo">
+<meta property="og:url" content="http://wykydtronik.github.io/2016/03/12/Backing-Up-Hexo-Blog-Source-To-Github-Repo/index.html">
+<meta property="og:site_name" content="tronik.conf">
+<meta property="og:description" content="NoticeI have ran into a few issues with having hexo on my desktop and laptop. One thing to note is that Hexo’s environment (aka the hexo blog folder) containes a few dependencies and files that could">
+<meta property="og:updated_time" content="2017-03-19T06:49:29.190Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Backing Up Hexo Blog Source To Github Repo">
+<meta name="twitter:description" content="NoticeI have ran into a few issues with having hexo on my desktop and laptop. One thing to note is that Hexo’s environment (aka the hexo blog folder) containes a few dependencies and files that could">
+<meta name="twitter:creator" content="@wykydtronik">
+  
+    <link rel="alternate" href="/atom.xml" title="tronik.conf" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/docs">Docs</a></li>
+        
+          <li><a class=""
+                 href="/about">About</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">tronik.conf</h1>
+  
+    <p class="lead blog-description">coffee to code</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-Backing-Up-Hexo-Blog-Source-To-Github-Repo" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Backing Up Hexo Blog Source To Github Repo
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/03/12/Backing-Up-Hexo-Blog-Source-To-Github-Repo/" class="article-date"><time datetime="2016-03-12T22:06:41.000Z" itemprop="datePublished">2016-03-12</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/docs/">docs</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Notice"><a href="#Notice" class="headerlink" title="Notice"></a>Notice</h2><p>I have ran into a few issues with having hexo on my desktop and laptop. One thing to note is that Hexo’s environment (aka the hexo blog folder) containes a few dependencies and files that could conflict between the two environments. First thing to note is _config.yml. When creating a new hexo blog on your second machine, hexo init will generate a default _config.yml. It’s important to copy your github source _config.yml to your desktop and then overwrite it in your hexo folder. Secondly, add package.json to .gitignore before your first push to github repo. The two environments will clash with merging conflicts if this file is placed there. -from laptop</p>
+<h2 id="update"><a href="#update" class="headerlink" title="update"></a>update</h2><p>This post is now outdated, it was merely a place I could write notes while exploring how to have hexo in two places at once. Finalized notes on <a href="http://kaichi.github.io/2016/03/14/Redeploying-Hexo-via-Github-Redeploying/" target="_blank" rel="external">how to redeploy hexo onto another workstation can be found here.</a></p>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Since documentation doesn’t really cover this, I thought I’d just make note of this. If you want to prevent your Hexo blog for disappearing off the face of the planet, don’t keep it in one place. In my case, I’ve had Octopress blogs die because my Octopress source went MIA when my SSD died. Since I also spend most my time on my desktop, having Hexo only on my laptop would be inconveniant. Time to break things.</p>
+<p>Before we start, it’s assumed that you already have git, node.js, and hexo setup on your main computer. You will notice me refer to my laptop and desktop throughout this article. My laptop is the first hexo environment I setup. I want to be able to make edits to my blog on my desktop while I’m working or while I’m out at the coffee shop.</p>
+<h2 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~/github/kaichi.github.io</div><div class="line">$ git init</div></pre></td></tr></table></figure>
+<p>Open .gitignore in your favorite editor. We need to make sure to add package.json to this list so that we can easily work on our hexo source on other computers. Failing to do this will cause merging conflicts and both hexo environments/dependencies to be confused.</p>
+<h2 id="gitignore-package-json"><a href="#gitignore-package-json" class="headerlink" title=".gitignore + package.json"></a>.gitignore + package.json</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.DS_Store</div><div class="line">Thumbs.db</div><div class="line">db.json</div><div class="line">*.log</div><div class="line">node_modules/</div><div class="line">public/</div><div class="line">.deploy*/</div><div class="line">package.json</div></pre></td></tr></table></figure>
+<h2 id="commit-and-push"><a href="#commit-and-push" class="headerlink" title="commit and push"></a>commit and push</h2><p>Finally, we can add/commit and add the remote origin. You’ll want to create an empty Github repository for before proceeding.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git add .</div><div class="line">$ git commit -m <span class="string">"putting hexo blog source on github"</span></div><div class="line">$ git remote add origin git@github.com:kaichi/kaichi.github.io-source.git</div><div class="line">$ git push -u origin <span class="built_in">source</span></div></pre></td></tr></table></figure>
+<p>Basically what you’ll want to do is have a repository for your hexo deployment and one for your source. Atleast this way, if I need to clone the source repository to my desktop I can grab it on the fly. Always commit!</p>
+<p>I’ve ran into issues when cloning my source to my desktop. I wasn’t sure how this would go about since npm places dependencies inside the hexo blog folder. I ran into a few road blocks, but I believe this is how to go about it.</p>
+<h2 id="Cloning-Hexo-To-Your-Second-Workstation"><a href="#Cloning-Hexo-To-Your-Second-Workstation" class="headerlink" title="Cloning Hexo To Your Second Workstation"></a>Cloning Hexo To Your Second Workstation</h2><p>First cd to your directory and clone the source.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> C:\github</div><div class="line">$ git <span class="built_in">clone</span> git@github.com:kaichi/kaichi.github.io-source.git</div></pre></td></tr></table></figure>
+<h2 id="Copy-config-yml-To-Desktop"><a href="#Copy-config-yml-To-Desktop" class="headerlink" title="Copy _config.yml To Desktop"></a>Copy _config.yml To Desktop</h2><p>After cloning your hexo blog source, cut _config.yml and paste it to your desktop. We will need this later. Backup package.json if you want, it will get overwritten. You will need to install your dependencies in the next few steps to setup the hexo environment.</p>
+<h2 id="Hexo-Init-amp-Install-Hexo-Deployer-Git"><a href="#Hexo-Init-amp-Install-Hexo-Deployer-Git" class="headerlink" title="Hexo Init &amp; Install Hexo Deployer Git"></a>Hexo Init &amp; Install Hexo Deployer Git</h2><p>Assuming you already have node.js and hexo installed on your second machine (in my case, my desktop) proceed to initiate hexo over your cloned source.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> c:\github\</div><div class="line">$ hexo init kaichi.github.io-source</div></pre></td></tr></table></figure>
+<p>After that’s said and done, go to your desktop and copy _config.yml and paste it over the default one init placed in your environment.</p>
+<p>Next let’s get the deployer installed.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<p>Don’t forget about the –save flag, I completely derped out and couldn’t deploy my blog and noticed it wasn’t even installed.</p>
+<h2 id="final-deployment-testing"><a href="#final-deployment-testing" class="headerlink" title="final deployment testing"></a>final deployment testing</h2><p>Now you should be able to generate and deploy your hexo blog. Keep in mind, I am using Git Shell specifically because I don’t want to juggle and mess with ssh keys.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>Everything should deploy fine, check your github page to see if it’s broken. It might take a second to update. Worse comes to worse, it’s broken and you can just redeploy from your first workstation, or in my case my laptop. Now it’s time to see if I can push my local source and get this writeup to update on my laptop without exploding…</p>
+<h2 id="Side-Notes"><a href="#Side-Notes" class="headerlink" title="Side Notes"></a>Side Notes</h2><p>Things are exploding… putting package.json in .gitignore… -update from laptop</p>
+<p>I keep running into issues with package.json… First I noticed that package.json has a few conflicts between the two environments with versions / dependancies. I removed it from the repo and added it to .gitignore. Now when I pulled from laptop and desktop it would delete the local package.json. Perhaps from the very beginning I should have added package.json to the .gitignore folder.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://wykydtronik.github.io/2016/03/12/Backing-Up-Hexo-Blog-Source-To-Github-Repo/" data-id="cj0hpxcu700094kueu0ccjyof" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2016/03/12/I-give-up-on-Octopress/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">I Give Up On Octopress</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2016/03/13/Power-Outage-Laptop-Backup/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Power Outage - Laptop Backup!</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>sysadmin and webdev from Seattle, WA</p>
+
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/Agile/" style="font-size: 10px;">Agile</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/Computer-Science/" style="font-size: 10px;">Computer Science</a> <a href="/tags/Development/" style="font-size: 10px;">Development</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexchat/" style="font-size: 16.67px;">Hexchat</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/IRC/" style="font-size: 16.67px;">IRC</a> <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/OctoPress/" style="font-size: 10px;">OctoPress</a> <a href="/tags/Soundcloud/" style="font-size: 10px;">Soundcloud</a> <a href="/tags/Twitter/" style="font-size: 10px;">Twitter</a> <a href="/tags/WordPress/" style="font-size: 13.33px;">WordPress</a> <a href="/tags/drifting/" style="font-size: 10px;">drifting</a> <a href="/tags/photography/" style="font-size: 10px;">photography</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2017/03/19/testing-march-19/">testing march 19</a>
+        </li>
+      
+        <li>
+          <a href="/2017/03/18/Angelina-Fabbro-JS-Masterclass/">Angelina Fabbro: JS Masterclass</a>
+        </li>
+      
+        <li>
+          <a href="/2017/03/17/Had-A-Great-Week/">Had A Great Week</a>
+        </li>
+      
+        <li>
+          <a href="/2017/03/14/JavaScript-Videos/">JavaScript Videos &amp; CS Books</a>
+        </li>
+      
+        <li>
+          <a href="/2017/03/12/La-Cafe/">La Cafe</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2017 tronik.conf<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

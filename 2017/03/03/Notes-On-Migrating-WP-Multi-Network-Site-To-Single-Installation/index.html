@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Notes On Migrating WP Multi Network Site To Single Installation | tronik.conf</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Just taking notes on how to migrate a site from a WP Multi Network instance and bring it into a single WP installation instance.
+1.) Get The blog_id and site_id of target site. This can be obtained th">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notes On Migrating WP Multi Network Site To Single Installation">
+<meta property="og:url" content="http://wykydtronik.github.io/2017/03/03/Notes-On-Migrating-WP-Multi-Network-Site-To-Single-Installation/index.html">
+<meta property="og:site_name" content="tronik.conf">
+<meta property="og:description" content="Just taking notes on how to migrate a site from a WP Multi Network instance and bring it into a single WP installation instance.
+1.) Get The blog_id and site_id of target site. This can be obtained th">
+<meta property="og:updated_time" content="2017-03-19T06:49:29.384Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Notes On Migrating WP Multi Network Site To Single Installation">
+<meta name="twitter:description" content="Just taking notes on how to migrate a site from a WP Multi Network instance and bring it into a single WP installation instance.
+1.) Get The blog_id and site_id of target site. This can be obtained th">
+<meta name="twitter:creator" content="@wykydtronik">
+  
+    <link rel="alternate" href="/atom.xml" title="tronik.conf" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/docs">Docs</a></li>
+        
+          <li><a class=""
+                 href="/about">About</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">tronik.conf</h1>
+  
+    <p class="lead blog-description">coffee to code</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-Notes-On-Migrating-WP-Multi-Network-Site-To-Single-Installation" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Notes On Migrating WP Multi Network Site To Single Installation
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2017/03/03/Notes-On-Migrating-WP-Multi-Network-Site-To-Single-Installation/" class="article-date"><time datetime="2017-03-03T23:06:46.000Z" itemprop="datePublished">2017-03-03</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Just taking notes on how to migrate a site from a WP Multi Network instance and bring it into a single WP installation instance.</p>
+<p>1.) Get The blog_id and site_id of target site. This can be obtained through wp<em>blog<br>2.) Export the appropriate tables pertaining to the targeted WP Multi Network site. Include the Drop statement.<br>3.) Find and Replace the prefixes for the new installation, for example lets revert back to wp</em><br>4.) Editing your hosts file and redirect traffic from targetdomain.com to 127.0.0.1 - this will allow you to mock up the new installation and have it resolve. You might run into cookie issues, so be sure to run incognito only when your local LAMP/XAMP setup is setup. Personally, I use vhosts.<br>5.) Install WP on your localhost. Copy all the active plugins and the theme into the new localhost installation.<br>6.) Download all the files in the specific media directory in blogs.dir - retain the Mu blogs.dir file path.<br>7.) Import the exported sql file</p>
+<p>There can be metadata that breaks with this, off the top of my head in wp_options file upload URL and various serialized data with paths might break. Theme options are one of these. I would recommend using <a href="https://interconnectit.com/products/search-and-replace-for-wordpress-databases/" target="_blank" rel="external">Database Search And Replace Script in PHP by Interconnect/it</a>. In most of my cases, I have to fix header, logo, and favicon paths. Depending on what theme you’re dealing with, this could be either simple or complex enough to run the script mentioned above.</p>
+<p>UPDATE: I just realized, there is another adjustment that needs to be made in wp_options which is crucial. In wp_options, look for the option_name similar to wp_user_roles. If you have a different prefix on your Multi Network, this name needs to change. For example, if it’s called myblogprefix_user_roles - the user roles are broken upon signing in. Just quickly go in and change this to wp_user_roles</p>
+<p>There’s obviously a lot of steps missing, these are merely notes.</p>
+<p>Remember backup everything.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://wykydtronik.github.io/2017/03/03/Notes-On-Migrating-WP-Multi-Network-Site-To-Single-Installation/" data-id="cj0hpxcxx001o4kue9s6b3uug" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WordPress/">WordPress</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2017/03/02/Gym-Code-Laundry/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Gym Code Laundry?</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2017/03/03/New-Hangout-Spot/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">New Hangout Spot</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>sysadmin and webdev from Seattle, WA</p>
+
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/Agile/" style="font-size: 10px;">Agile</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/Computer-Science/" style="font-size: 10px;">Computer Science</a> <a href="/tags/Development/" style="font-size: 10px;">Development</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexchat/" style="font-size: 16.67px;">Hexchat</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/IRC/" style="font-size: 16.67px;">IRC</a> <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/OctoPress/" style="font-size: 10px;">OctoPress</a> <a href="/tags/Soundcloud/" style="font-size: 10px;">Soundcloud</a> <a href="/tags/Twitter/" style="font-size: 10px;">Twitter</a> <a href="/tags/WordPress/" style="font-size: 13.33px;">WordPress</a> <a href="/tags/drifting/" style="font-size: 10px;">drifting</a> <a href="/tags/photography/" style="font-size: 10px;">photography</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2017/03/19/testing-march-19/">testing march 19</a>
+        </li>
+      
+        <li>
+          <a href="/2017/03/18/Angelina-Fabbro-JS-Masterclass/">Angelina Fabbro: JS Masterclass</a>
+        </li>
+      
+        <li>
+          <a href="/2017/03/17/Had-A-Great-Week/">Had A Great Week</a>
+        </li>
+      
+        <li>
+          <a href="/2017/03/14/JavaScript-Videos/">JavaScript Videos &amp; CS Books</a>
+        </li>
+      
+        <li>
+          <a href="/2017/03/12/La-Cafe/">La Cafe</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2017 tronik.conf<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
