@@ -84,6 +84,222 @@
         <div class="col-sm-8 blog-main">
           
   
+    <article id="post-Gym-Meal-Prep-Code-Execise" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/02/Gym-Meal-Prep-Code-Execise/">Gym, Meal Prep, Code Execise</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2017/03/02/Gym-Meal-Prep-Code-Execise/" class="article-date"><time datetime="2017-03-02T09:31:43.000Z" itemprop="datePublished">2017-03-02</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>These evening I spent a good 60 minutes on cardio. After the gym decided I needed go head to the grocery store and pick up ingredients and tupperware to try out meal prep. I spent about 2 hours cooking meals for the week and realized it was getting very late. Luckily earlier today I spent time blogging and tinkering with WordPress. At the gym, I did watch a few videos on Coursera and caught a few videos from Simple Programmer.</p>
+<p>I think I may just kick back and thumb through my Javascript book and save experimental coding for tomorrow morning. I’m really happy to be on a good path with Javascript!</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://wykydtronik.github.io/2017/03/02/Gym-Meal-Prep-Code-Execise/" data-id="cj138fmtt000jl0ueosq6e6x4" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Change-Password-Email-Notification-On-WordPress" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/01/Change-Password-Email-Notification-On-WordPress/">Change Password Email Notification On WordPress</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2017/03/01/Change-Password-Email-Notification-On-WordPress/" class="article-date"><time datetime="2017-03-01T18:37:23.000Z" itemprop="datePublished">2017-03-01</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Below is an example on how to alter the password notification email that WordPress sends users when their password changes. This simply uses the password_change_email hook and passes the $new_message_txt to it.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">add_filter(</div><div class="line">  &apos;password_change_email&apos;,</div><div class="line">  &apos;wpse207879_change_password_mail_message&apos;,</div><div class="line">  10,</div><div class="line">  3</div><div class="line">);</div><div class="line">function wpse207879_change_password_mail_message(</div><div class="line">  $pass_change_mail,</div><div class="line">  $user,</div><div class="line">  $userdata</div><div class="line">) &#123;</div><div class="line">  $new_message_txt = __( &apos;Some text ###USERNAME### more text</div><div class="line">    even more text ###EMAIL### more text after more text</div><div class="line">    last bit of text ###SITENAME###&apos; );</div><div class="line">  $pass_change_mail[ &apos;message&apos; ] = $new_message_txt;</div><div class="line">  return $pass_change_mail;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>I will likely just throw this into a <a href="https://codex.wordpress.org/Must_Use_Plugins/" title="dafuq" target="_blank" rel="external">Must Use plugin</a> just so that the message is covered across the network.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://wykydtronik.github.io/2017/03/01/Change-Password-Email-Notification-On-WordPress/" data-id="cj138fmtl000gl0ue23flqr7m" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WordPress/">WordPress</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Working-On-A-Daily-Routine" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/28/Working-On-A-Daily-Routine/">Working On A Daily Routine</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2017/02/28/Working-On-A-Daily-Routine/" class="article-date"><time datetime="2017-03-01T07:16:08.000Z" itemprop="datePublished">2017-02-28</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Lately I’ve been really trying to work on a daily routine, where I can really set higher standards for myself and make it the norm.</p>
+<p>Obviously, my work takes up most of my time throughout the day. I try to keep on top of things with use of my Moleskin Weekly Notebook. I keep this book at my desk, specifically for day to day tasks that needs to be addressed and worked on. I fill it with todo’s and daily reminders.</p>
+<p>Right now, I’m not using any fancy apps asides using Google Reminders or Kitchen Timer. Google Reminders are for quick and simple reminders. I specifically use Kitchen Timer to track time blocks shorter than an hour, like 15 - 30 minutes. Aside from those two Android apps, I also relay heavily on SimpleNote to keep notes stored on the cloud. All of those digital notes are accessible on any computer with internet and on my Android devices.</p>
+<p>I feel like I’m going to start focusing on creating activity blocks throughout my day to focus on specific tasks, such as household tasks, maintenance, debugging, escalated tickets, documentation, etc.</p>
+<p>Outside of work, I have a few things that I really want to keep on the daily routine. One of which is committing at least an hour at the gym. The gym mostly consists of cardio workouts, as I do love watching YouTube and Coursera on the elliptical and/or treadmill. Then there is weights, specific muscle groups, etc. And if the basketball court is free, practice my free throw and layups. With the weather as shitty as it has been, BMX and Skateboarding is out of the picture until it drys up and warms up at least above 40 degrees…</p>
+<p>When I get back home from the gym, I have time for R&amp;R. I may play a few matches of CSGO or put an hour or so into Fallout 4. I am trying to minimize my gaming right now and trade that off for focusing on this blog, git, and Javascript. I’ve mentioned it before, HTML, CSS, PHP, and MySQL is great and all… But one of my biggest draw backs, including UI, is not having good experience with Javascript and jQuery. I’m determined to keep experimenting with all of this to get a better understanding of the DOM.</p>
+<p>This would be my regular Monday through Friday routine. I doubt I’ll have time to deal with urban exploration and photography… Seattle’s traffic is a nightmare at times, so traveling around the city can be a headache. My weekends are usually wide open for photography.</p>
+<p>When I have time, I think I’ll make a list of bullet points of daily vs weekly items. I might include chores since I’ll be getting a new roommate soon.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://wykydtronik.github.io/2017/02/28/Working-On-A-Daily-Routine/" data-id="cj138fn06002ml0uekdqfrpxg" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Good-Weekend" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/27/Good-Weekend/">Good Weekend</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2017/02/27/Good-Weekend/" class="article-date"><time datetime="2017-02-28T07:43:48.000Z" itemprop="datePublished">2017-02-27</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I had a great weekend, spent a good amount of time in Seattle. I got to spend quality time tinkering with git and hexo, setting up a local instance, etc. I also spent time brushing up on other Javascript related basics, specifically looking at DOM related features. I’m breezing through the basics just as an exercise.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://wykydtronik.github.io/2017/02/27/Good-Weekend/" data-id="cj138fmvh0010l0uemme0ogt1" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Setting-Up-Laptop" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
@@ -122,7 +338,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/02/26/Setting-Up-Laptop/" data-id="cj0hpxcyu00204kue6qgrysec" class="article-share-link">
+      <a data-url="http://wykydtronik.github.io/2017/02/26/Setting-Up-Laptop/" data-id="cj138fmz00029l0ue3hxriw6k" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -173,7 +389,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/02/26/That-Seattle-Rain/" data-id="cj0hpxcz300264kuemhrdgshm" class="article-share-link">
+      <a data-url="http://wykydtronik.github.io/2017/02/26/That-Seattle-Rain/" data-id="cj138fmzo002gl0uexv6yuavu" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -224,7 +440,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/02/25/I-Don-t-Know-What-To-Do/" data-id="cj0hpxcwu00154kuesbjgg49n" class="article-share-link">
+      <a data-url="http://wykydtronik.github.io/2017/02/25/I-Don-t-Know-What-To-Do/" data-id="cj138fmvd000yl0uee370ln6o" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -276,7 +492,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/02/24/Continuing-With-Javascript/" data-id="cj0hpxcv1000g4kueor3kq2cv" class="article-share-link">
+      <a data-url="http://wykydtronik.github.io/2017/02/24/Continuing-With-Javascript/" data-id="cj138fmtf000fl0ueqda7dau3" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -327,7 +543,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/02/23/More-Javascript/" data-id="cj0hpxcxs001j4kueehhdv7ir" class="article-share-link">
+      <a data-url="http://wykydtronik.github.io/2017/02/23/More-Javascript/" data-id="cj138fmx3001ml0ue18yrsvkd" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -378,232 +594,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/02/22/What-Can-I-Do-To-Blog-More/" data-id="cj0hpxcze002c4kueg9icu5c0" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Instagram-Coding-Photos" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/22/Instagram-Coding-Photos/">Instagram Coding Photos</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2017/02/22/Instagram-Coding-Photos/" class="article-date"><time datetime="2017-02-22T18:28:55.000Z" itemprop="datePublished">2017-02-22</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Recently, I noticed the discover page on my Instagram is featuring programmer’s photos. Most of the photos are examples of minimalist work stations, anything ranging from a Macbook with a few accessories upwards to 3 screens blanketed with code. Since this is a thing, I guess I can attempt to take unique photos of my own setup. The one thing I don’t have is a knack for art latte’s and a Macbook… I have an extremely outdated 2010 Intel i3 laptop and no good coffee shops around me.</p>
-<p>Check out the IG <a href="http://instagram.com/programmerrepublic" target="_blank" rel="external">@programmerrepublic</a> for examples.</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/02/22/Instagram-Coding-Photos/" data-id="cj0hpxcwz00184kuewa45zgi5" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Again" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/21/Again/">I Have Hexo Again</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2017/02/21/Again/" class="article-date"><time datetime="2017-02-22T01:31:57.000Z" itemprop="datePublished">2017-02-21</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Well, it’s been far to long since I’ve played with Hexo. I’ve been through a few different formats on my OS drive and struggled to recover the source code. Apparently I completely forgot how to restore my source from Git repository. From what I was looking at, it looked like the source on git was out of date. Thankfully I had the repo cloned on my laptop. I was able to restore it on my desktop without a hitch.</p>
-<p>Since it’s been so long, I’ll have to figure out how to redeploy this after generating.</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/02/21/Again/" data-id="cj0hpxcs900004kuep4zom0u1" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Back-On-The-Javascript-Grind" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/20/Back-On-The-Javascript-Grind/">Back On The Javascript Grind</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2016/04/20/Back-On-The-Javascript-Grind/" class="article-date"><time datetime="2016-04-21T03:02:39.000Z" itemprop="datePublished">2016-04-20</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Since I’ve been very busy with work the past month, I’ve fallen behind on studying up on Javascript. It’s been a while since I’ve worked with Javascript and I’ve been working on brushing up on the language. Right now I’m just playing with Codecademy, watching Coursera courses, and reading through “Javascript &amp; Jquery” by Jon Duckett. Going from start to finish as a brush up kind of sucks, but Javascript was never my favorite language to play with. This adventure should be a fun one.</p>
-<p>Right now, I’m working through the Javascript course on Coursera by Colleen van Lent. I’m only on the week 2 course, but so far I really like her way of explaining things and her terminology she uses to educate. It’s almost like she’s trying to apply programming terminology while educating the user what it means.</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2016/04/20/Back-On-The-Javascript-Grind/" data-id="cj0hpxcu100084kueltqqg387" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Mendix-Advanced-Training-Course-Notes" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/29/Mendix-Advanced-Training-Course-Notes/">Mendix Advanced Training Course Notes</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2016/03/29/Mendix-Advanced-Training-Course-Notes/" class="article-date"><time datetime="2016-03-29T16:05:08.000Z" itemprop="datePublished">2016-03-29</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="XPath-What-is-it"><a href="#XPath-What-is-it" class="headerlink" title="XPath - What is it?"></a>XPath - What is it?</h2><ul>
-<li>Primary query language</li>
-<li>OQL is secondary query language</li>
-<li>Query on hierarchical structures</li>
-</ul>
-<h2 id="What-is-a-query"><a href="#What-is-a-query" class="headerlink" title="What is a query?"></a>What is a query?</h2><ul>
-<li>A query is a command to obtain a specific set of data</li>
-</ul>
-<h2 id="XPath-Locations"><a href="#XPath-Locations" class="headerlink" title="XPath Locations"></a>XPath Locations</h2><h2 id="Pages"><a href="#Pages" class="headerlink" title="Pages"></a>Pages</h2><ul>
-<li>Contrain on context</li>
-<li>Contrain on selectable data</li>
-</ul>
-<h2 id="Microflows"><a href="#Microflows" class="headerlink" title="Microflows"></a>Microflows</h2><ul>
-<li>Constrain on data retrieve</li>
-</ul>
-<h2 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h2><ul>
-<li>Constrain on access rights</li>
-</ul>
-<h2 id="XPath-Tokens"><a href="#XPath-Tokens" class="headerlink" title="XPath Tokens"></a>XPath Tokens</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// context</div><div class="line"></div><div class="line">[] grouping of XPath</div><div class="line"></div><div class="line">. separate module or element</div><div class="line"></div><div class="line">/ seperate domain model elements</div><div class="line"></div><div class="line">() grouping of <span class="built_in">functions</span></div><div class="line">  [not(Title =<span class="string">'Introduction Course'</span>)]</div></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2016/03/29/Mendix-Advanced-Training-Course-Notes/" data-id="cj0hpxcxm001g4kue3l1sgzd9" class="article-share-link">
+      <a data-url="http://wykydtronik.github.io/2017/02/22/What-Can-I-Do-To-Blog-More/" data-id="cj138fmzs002hl0ue2nwpkrsl" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -650,23 +641,23 @@
     <ul class="sidebar-module-list">
       
         <li>
+          <a href="/2017/04/04/finish-chapter-7-and-working-on-wp-projects/">finish chapter 7 and working on wp projects</a>
+        </li>
+      
+        <li>
+          <a href="/2017/03/23/Made-It-Through-Chapter-6/">Made It Through Chapter 6</a>
+        </li>
+      
+        <li>
+          <a href="/2017/03/20/Cranking-Out/">Cranking Out</a>
+        </li>
+      
+        <li>
           <a href="/2017/03/19/testing-march-19/">testing march 19</a>
         </li>
       
         <li>
           <a href="/2017/03/18/Angelina-Fabbro-JS-Masterclass/">Angelina Fabbro: JS Masterclass</a>
-        </li>
-      
-        <li>
-          <a href="/2017/03/17/Had-A-Great-Week/">Had A Great Week</a>
-        </li>
-      
-        <li>
-          <a href="/2017/03/14/JavaScript-Videos/">JavaScript Videos &amp; CS Books</a>
-        </li>
-      
-        <li>
-          <a href="/2017/03/12/La-Cafe/">La Cafe</a>
         </li>
       
     </ul>
