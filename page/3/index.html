@@ -84,6 +84,217 @@
         <div class="col-sm-8 blog-main">
           
   
+    <article id="post-A-Free-Weekend" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/04/A-Free-Weekend/">A Free Weekend</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2017/03/04/A-Free-Weekend/" class="article-date"><time datetime="2017-03-04T22:17:45.000Z" itemprop="datePublished">2017-03-04</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Today I have a open schedule, I am not entirely sure what to do today aside from play a little bit of Fallout 4 and sit down and thumb through my Javascript code. I may not head out to a coffee shop until later today when things wind down. As a previously mentioned, I’m not a fan of over populated coffee shops with wifi dwellers hunch over their Americano as they look over each others shoulders for the next available outlet. Yesterday I finished the Week 3 exam of Javascript Coursera, it’s actually a lot of fun.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://wykydtronik.github.io/2017/03/04/A-Free-Weekend/" data-id="cj1bp6cy8000650ue4nwzp6y7" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-New-Hangout-Spot" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/03/New-Hangout-Spot/">New Hangout Spot</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2017/03/03/New-Hangout-Spot/" class="article-date"><time datetime="2017-03-04T03:01:14.000Z" itemprop="datePublished">2017-03-03</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I just discovered that a local Starbucks is quite dead in the evenings. It kind of looks ravaged, like they were super busy this afternoon. It does seem insanely busy during the mornings and afternoons. According to Google Maps, their business at this location falls flat on its face after 4pm… This is great! Time to give them a reason to stay open until 10pm!</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://wykydtronik.github.io/2017/03/03/New-Hangout-Spot/" data-id="cj1bp6d47001t50ue0i0mds6r" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Notes-On-Migrating-WP-Multi-Network-Site-To-Single-Installation" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/03/Notes-On-Migrating-WP-Multi-Network-Site-To-Single-Installation/">Notes On Migrating WP Multi Network Site To Single Installation</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2017/03/03/Notes-On-Migrating-WP-Multi-Network-Site-To-Single-Installation/" class="article-date"><time datetime="2017-03-03T23:06:46.000Z" itemprop="datePublished">2017-03-03</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Just taking notes on how to migrate a site from a WP Multi Network instance and bring it into a single WP installation instance.</p>
+<p>1.) Get The blog_id and site_id of target site. This can be obtained through wp<em>blog<br>2.) Export the appropriate tables pertaining to the targeted WP Multi Network site. Include the Drop statement.<br>3.) Find and Replace the prefixes for the new installation, for example lets revert back to wp</em><br>4.) Editing your hosts file and redirect traffic from targetdomain.com to 127.0.0.1 - this will allow you to mock up the new installation and have it resolve. You might run into cookie issues, so be sure to run incognito only when your local LAMP/XAMP setup is setup. Personally, I use vhosts.<br>5.) Install WP on your localhost. Copy all the active plugins and the theme into the new localhost installation.<br>6.) Download all the files in the specific media directory in blogs.dir - retain the Mu blogs.dir file path.<br>7.) Import the exported sql file</p>
+<p>There can be metadata that breaks with this, off the top of my head in wp_options file upload URL and various serialized data with paths might break. Theme options are one of these. I would recommend using <a href="https://interconnectit.com/products/search-and-replace-for-wordpress-databases/" target="_blank" rel="external">Database Search And Replace Script in PHP by Interconnect/it</a>. In most of my cases, I have to fix header, logo, and favicon paths. Depending on what theme you’re dealing with, this could be either simple or complex enough to run the script mentioned above.</p>
+<p>UPDATE: I just realized, there is another adjustment that needs to be made in wp_options which is crucial. In wp_options, look for the option_name similar to wp_user_roles. If you have a different prefix on your Multi Network, this name needs to change. For example, if it’s called myblogprefix_user_roles - the user roles are broken upon signing in. Just quickly go in and change this to wp_user_roles</p>
+<p>There’s obviously a lot of steps missing, these are merely notes.</p>
+<p>Remember backup everything.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://wykydtronik.github.io/2017/03/03/Notes-On-Migrating-WP-Multi-Network-Site-To-Single-Installation/" data-id="cj1bp6d4w002350uesaujavm9" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WordPress/">WordPress</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Gym-Code-Laundry" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/02/Gym-Code-Laundry/">Gym Code Laundry?</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2017/03/02/Gym-Code-Laundry/" class="article-date"><time datetime="2017-03-03T05:42:02.000Z" itemprop="datePublished">2017-03-02</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I’m starting to take a liking to listening/watching to Coursera videos while at the gym, although it’s challenging when they start talk about specifics in code and I have to slow down, pick up my phone, and squint at the screen to read the code. I really wish I had a tablet with 4GLTE or a tablet connected to my phone’s hotspot. Wouldn’t that be nice?</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://wykydtronik.github.io/2017/03/02/Gym-Code-Laundry/" data-id="cj1bp6d11000p50uedfcoplzn" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Gym-Meal-Prep-Code-Execise" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
@@ -122,7 +333,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/03/02/Gym-Meal-Prep-Code-Execise/" data-id="cj138fmtt000jl0ueosq6e6x4" class="article-share-link">
+      <a data-url="http://wykydtronik.github.io/2017/03/02/Gym-Meal-Prep-Code-Execise/" data-id="cj1bp6d14000q50ueobaptei7" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -175,7 +386,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/03/01/Change-Password-Email-Notification-On-WordPress/" data-id="cj138fmtl000gl0ue23flqr7m" class="article-share-link">
+      <a data-url="http://wykydtronik.github.io/2017/03/01/Change-Password-Email-Notification-On-WordPress/" data-id="cj1bp6cyy000950ued0fm3fx7" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -235,7 +446,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/02/28/Working-On-A-Daily-Routine/" data-id="cj138fn06002ml0uekdqfrpxg" class="article-share-link">
+      <a data-url="http://wykydtronik.github.io/2017/02/28/Working-On-A-Daily-Routine/" data-id="cj1bp6d7d002u50ue0exg74lj" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -286,7 +497,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/02/27/Good-Weekend/" data-id="cj138fmvh0010l0uemme0ogt1" class="article-share-link">
+      <a data-url="http://wykydtronik.github.io/2017/02/27/Good-Weekend/" data-id="cj1bp6d0u000n50ue459qcj19" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -338,7 +549,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/02/26/Setting-Up-Laptop/" data-id="cj138fmz00029l0ue3hxriw6k" class="article-share-link">
+      <a data-url="http://wykydtronik.github.io/2017/02/26/Setting-Up-Laptop/" data-id="cj1bp6d5l002a50ueh2s2y7lh" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -389,212 +600,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/02/26/That-Seattle-Rain/" data-id="cj138fmzo002gl0uexv6yuavu" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-I-Don-t-Know-What-To-Do" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/25/I-Don-t-Know-What-To-Do/">I Don&#39;t Know What To Do</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2017/02/25/I-Don-t-Know-What-To-Do/" class="article-date"><time datetime="2017-02-25T08:23:47.000Z" itemprop="datePublished">2017-02-25</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>I don’t know what to do, and where to head. Javascript isn’t necessarily a specialty skill that I necessarily need. I guess I do enjoy building custom UI. I’ve always had a knack for front end design, starting with HTML, then onto CSS, then to PHP to build custom WordPress themes and plugins. I miss experimenting with webpages and building content to drive traffic to it. Javascript was always one of those languages that I’ve avoided, and I think I need to continue to push myself towards getting deeply involved with it.</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/02/25/I-Don-t-Know-What-To-Do/" data-id="cj138fmvd000yl0uee370ln6o" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Continuing-With-Javascript" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/24/Continuing-With-Javascript/">Continuing With Javascript</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2017/02/24/Continuing-With-Javascript/" class="article-date"><time datetime="2017-02-24T09:00:45.000Z" itemprop="datePublished">2017-02-24</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>It’s been a very long time since I started dabbling with Javascript. I had a major project  come up and caused me to severally derail off the path of .js</p>
-<p>I’m not tinkering around with it and attempting to hold myself accountable with studying Javascript. The sandbox repository is just a place where I can experiment. This blog is also helping.</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/02/24/Continuing-With-Javascript/" data-id="cj138fmtf000fl0ueqda7dau3" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-More-Javascript" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/23/More-Javascript/">More Javascript</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2017/02/23/More-Javascript/" class="article-date"><time datetime="2017-02-23T08:40:18.000Z" itemprop="datePublished">2017-02-23</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Short blog test, trying to figure out what’s wrong with my origin master.</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/02/23/More-Javascript/" data-id="cj138fmx3001ml0ue18yrsvkd" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-What-Can-I-Do-To-Blog-More" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/22/What-Can-I-Do-To-Blog-More/">What Can I Do To Blog More?</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2017/02/22/What-Can-I-Do-To-Blog-More/" class="article-date"><time datetime="2017-02-23T03:45:26.000Z" itemprop="datePublished">2017-02-22</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>I am trying to come up with reasons to blog more. Part of the reason I want to use Hexo and Github hosting is because it gets me in CLI and working with git. I am also really trying to push myself to play with jQuery more and learn API’s. Javascript has always been a language that I’ve put off, but I’d like to start dabbling with it day to day. Once step at a time!</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://wykydtronik.github.io/2017/02/22/What-Can-I-Do-To-Blog-More/" data-id="cj138fmzs002hl0ue2nwpkrsl" class="article-share-link">
+      <a data-url="http://wykydtronik.github.io/2017/02/26/That-Seattle-Rain/" data-id="cj1bp6d5w002g50ue3odv17fp" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -611,7 +617,7 @@
 
 
   <div id="page-nav">
-    <nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/page/2/"><i class="fa fa-chevron-left"></i> Prev</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li class="active"><span class="page-number">3</span></li><li><a class="page-number" href="/page/4/">4</a></li><li><a class="page-number" href="/page/5/">5</a></li><li><a class="page-next" rel="next" href="/page/4/">Next <i class="fa fa-chevron-right"></i></a></li></ul></nav>
+    <nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/page/2/"><i class="fa fa-chevron-left"></i> Prev</a></li><li><a class="page-number" href="/">1</a></li><li><a class="page-number" href="/page/2/">2</a></li><li class="active"><span class="page-number">3</span></li><li><a class="page-number" href="/page/4/">4</a></li><li><a class="page-number" href="/page/5/">5</a></li><li><a class="page-number" href="/page/6/">6</a></li><li><a class="page-next" rel="next" href="/page/4/">Next <i class="fa fa-chevron-right"></i></a></li></ul></nav>
   </div>
 
 
@@ -641,23 +647,23 @@
     <ul class="sidebar-module-list">
       
         <li>
+          <a href="/2017/04/09/Long-Weekend-and-Hackintosh-Explosions/">Long Weekend and Hackintosh Explosions</a>
+        </li>
+      
+        <li>
           <a href="/2017/04/04/finish-chapter-7-and-working-on-wp-projects/">finish chapter 7 and working on wp projects</a>
         </li>
       
         <li>
-          <a href="/2017/03/23/Made-It-Through-Chapter-6/">Made It Through Chapter 6</a>
+          <a href="/2017/03/29/Slowed-Down-But-Picking-Back-Up/">Slowed Down But Picking Back  Up</a>
         </li>
       
         <li>
-          <a href="/2017/03/20/Cranking-Out/">Cranking Out</a>
+          <a href="/2017/03/26/Sunday-Funday/">Sunday Funday</a>
         </li>
       
         <li>
-          <a href="/2017/03/19/testing-march-19/">testing march 19</a>
-        </li>
-      
-        <li>
-          <a href="/2017/03/18/Angelina-Fabbro-JS-Masterclass/">Angelina Fabbro: JS Masterclass</a>
+          <a href="/2017/03/24/Feeling-Stuck/">Feeling Stuck</a>
         </li>
       
     </ul>
